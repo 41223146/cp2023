@@ -143,6 +143,53 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">Monaco << <a href='Monaco.html'>Previous</a> <a href='w7.html'>Next</a> >> w7<br /><h1>Latvia</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+
+#define WIDTH 600
+#define HEIGHT 400
+#define RED 0xBF0A30    // Red color
+#define WHITE 0xFFFFFF  // White color
+
+void drawLatviaFlag() {
+    gdImagePtr im;
+    FILE *output;
+
+    im = gdImageCreateTrueColor(WIDTH, HEIGHT);
+    output = fopen("latvia_flag.png", "wb");
+
+    // Allocate red and white colors
+    int redIndex = gdImageColorAllocate(im, (RED &gt;&gt; 16) &amp; 0xFF, (RED &gt;&gt; 8) &amp; 0xFF, RED &amp; 0xFF);
+    int whiteIndex = gdImageColorAllocate(im, (WHITE &gt;&gt; 16) &amp; 0xFF, (WHITE &gt;&gt; 8) &amp; 0xFF, WHITE &amp; 0xFF);
+
+    // Draw red upper half
+    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT / 2 - 1, redIndex);
+
+    // Draw red lower half
+    gdImageFilledRectangle(im, 0, HEIGHT / 2, WIDTH - 1, HEIGHT - 1, redIndex);
+
+    // Draw white horizontal stripe (centered vertically)
+    int whiteHeight = HEIGHT / 5;  // adjust the height as needed
+    int whiteY = (HEIGHT - whiteHeight) / 2;
+
+    // Ensure white stripe does not exceed the image height
+    if (whiteY + whiteHeight &gt; HEIGHT)
+        whiteHeight = HEIGHT - whiteY;
+
+    gdImageFilledRectangle(im, 0, whiteY, WIDTH - 1, whiteY + whiteHeight - 1, whiteIndex);
+
+    // Save the image
+    gdImagePng(im, output);
+    fclose(output);
+    gdImageDestroy(im);
+}
+
+int main() {
+    drawLatviaFlag();
+    return 0;
+}
+</pre>
+<p></p>
 <br />Monaco << <a href='Monaco.html'>Previous</a> <a href='w7.html'>Next</a> >> w7</div>
         
     <!-- footer -->
