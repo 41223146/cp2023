@@ -143,7 +143,27 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">6.c << <a href='6.c.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>8.c</h1>
-<p></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int days, years, weeks;
+
+    days = 1329; // Total number of days
+
+    // Converts days to years, weeks and days
+    years = days/365; // Calculate years
+    weeks = (days % 365)/7; // Calculate weeks
+    days = days - ((years*365) + (weeks*7)); // Calculate remaining days
+
+    // Print the results
+    printf("Years: %d\n", years);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d \n", days);
+
+    return 0;
+}</pre>
+<p><br/><br/></p>
 <br />6.c << <a href='6.c.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
