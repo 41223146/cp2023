@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='w1~w4.html'>w1~w4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='ROC.html'>ROC</a><li><a href='USA.html'>USA</a><li><a href='Japan.html'>Japan</a><li><a href='PROC.html'>PROC</a><li><a href='UK.html'>UK</a></li></ul><li><a href='w7.html'>w7</a><li><a href='w10.html'>w10</a><li><a href='w11.html'>w11</a><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1.c.html'>1.c</a><li><a href='2.c.html'>2.c</a><li><a href='3.c.html'>3.c</a><li><a href='4.c.html'>4.c</a><li><a href='5.c.html'>5.c</a><li><a href='6.c.html'>6.c</a><li><a href='8.c.html'>8.c</a><li><a href='60.c.html'>60.c</a><li><a href='65.c.html'>65.c</a><li><a href='70.c.html'>70.c</a></li></ul><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='作業內容.html'>作業內容</a><ul class='dropdown'><li><a href='w1~w4.html'>w1~w4</a><li><a href='w5.html'>w5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='ROC.html'>ROC</a><li><a href='USA.html'>USA</a><li><a href='Japan.html'>Japan</a><li><a href='PROC.html'>PROC</a><li><a href='UK.html'>UK</a></li></ul><li><a href='w7.html'>w7</a><li><a href='w10.html'>w10</a><li><a href='w11.html'>w11</a><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a></li></ul><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1.c.html'>1.c</a><li><a href='2.c.html'>2.c</a><li><a href='3.c.html'>3.c</a><li><a href='4.c.html'>4.c</a><li><a href='5.c.html'>5.c</a><li><a href='6.c.html'>6.c</a><li><a href='7.c.html'>7.c</a><li><a href='8.c.html'>8.c</a><li><a href='9.c.html'>9.c</a><li><a href='10.c.html'>10.c</a></li></ul><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,25 +142,29 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">8.c << <a href='8.c.html'>Previous</a> <a href='65.c.html'>Next</a> >> 65.c<br /><h1>60.c</h1>
+    <div id="tipue_search_content">6.c << <a href='6.c.html'>Previous</a> <a href='8.c.html'>Next</a> >> 8.c<br /><h1>7.c</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-int main() {
-    // Define an enumeration type 'week'
-    enum week {Sun, Mon, Tue, Wed, Thu, Fri, Sat};
 
-    // Print the values of the days using the enumeration constants
-    printf("Sun = %d", Sun);
-    printf("\nMon = %d", Mon);
-    printf("\nTue = %d", Tue);
-    printf("\nWed = %d", Wed);
-    printf("\nThu = %d", Thu);
-    printf("\nFri = %d", Fri);
-    printf("\nSat = %d", Sat);
+int main()
+{
+    int days, years, weeks;
+
+    days = 1329; // Total number of days
+
+    // Converts days to years, weeks and days
+    years = days/365; // Calculate years
+    weeks = (days % 365)/7; // Calculate weeks
+    days = days - ((years*365) + (weeks*7)); // Calculate remaining days
+
+    // Print the results
+    printf("Years: %d\n", years);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d \n", days);
 
     return 0;
 }</pre>
-<p><br/><img alt="" height="185" src="./../images/60.c.png" width="282"/></p>
-<br />8.c << <a href='8.c.html'>Previous</a> <a href='65.c.html'>Next</a> >> 65.c</div>
+<p><br/><img alt="" height="102" src="./../images/8.c.png" width="301"/></p>
+<br />6.c << <a href='6.c.html'>Previous</a> <a href='8.c.html'>Next</a> >> 8.c</div>
         
     <!-- footer -->
       <div class="container">
