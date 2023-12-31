@@ -2,7 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
-<meta property="head" content="H3">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,41 +142,18 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Russia << <a href='Russia.html'>Previous</a> <a href='Latvia.html'>Next</a> >> Latvia<br /><h1>Monaco</h1>
+    <div id="tipue_search_content">9. << <a href='9..html'>Previous</a> <a href='Note.html'>Next</a> >> Note<br /><h1>10.</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-
-#define WIDTH 600
-#define HEIGHT 400
-#define RED 0xD50A0A   // Red color
-#define WHITE 0xFFFFFF // White color
-
-void drawMonacoFlag() {
-    gdImagePtr im;
-    FILE *output;
-
-    im = gdImageCreateTrueColor(WIDTH, HEIGHT);
-    output = fopen("monaco_flag.png", "wb");
-
-    // Draw red upper half
-    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT / 2 - 1, RED);
-
-    // Draw white lower half
-    gdImageFilledRectangle(im, 0, HEIGHT / 2, WIDTH - 1, HEIGHT - 1, WHITE);
-
-    // Save the image
-    gdImagePng(im, output);
-    fclose(output);
-    gdImageDestroy(im);
-}
-
-int main() {
-    drawMonacoFlag();
-    return 0;
-}
-</pre>
-<p><img alt="" height="267" src="./../images/monaco_flag.png" width="400"/></p>
-<br />Russia << <a href='Russia.html'>Previous</a> <a href='Latvia.html'>Next</a> >> Latvia</div>
+/* read and display a number */
+int main () {
+ char c;
+ printf("Enter character: ");
+ c = getchar(); /* read the character in */
+ printf("Character entered: ");
+ putchar(c); /* write the character */
+ return(0);
+}</pre>
+<br />9. << <a href='9..html'>Previous</a> <a href='Note.html'>Next</a> >> Note</div>
         
     <!-- footer -->
       <div class="container">
