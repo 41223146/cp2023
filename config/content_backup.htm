@@ -954,6 +954,41 @@ int main() {
 }</pre>
 <p><img alt="" height="267" src="/images/italian_flag.png" width="400"/></p>
 <h3>Ukraine</h3>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+
+#define WIDTH 600
+#define HEIGHT 400
+#define YELLOW 0xFFD100  // Yellow color
+#define BLUE 0x0057A6    // Blue color
+
+void drawUkraineFlag() {
+    gdImagePtr im;
+    FILE *output;
+
+    im = gdImageCreateTrueColor(WIDTH, HEIGHT);
+    output = fopen("ukraine_flag.png", "wb");
+
+    // Allocate yellow and blue colors
+    int yellowIndex = gdImageColorAllocate(im, (YELLOW &gt;&gt; 16) &amp; 0xFF, (YELLOW &gt;&gt; 8) &amp; 0xFF, YELLOW &amp; 0xFF);
+    int blueIndex = gdImageColorAllocate(im, (BLUE &gt;&gt; 16) &amp; 0xFF, (BLUE &gt;&gt; 8) &amp; 0xFF, BLUE &amp; 0xFF);
+
+    // Draw blue upper half
+    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT / 2 - 1, blueIndex);
+
+    // Draw yellow lower half
+    gdImageFilledRectangle(im, 0, HEIGHT / 2, WIDTH - 1, HEIGHT - 1, yellowIndex);
+
+    // Save the image
+    gdImagePng(im, output);
+    fclose(output);
+    gdImageDestroy(im);
+}
+
+int main() {
+    drawUkraineFlag();
+    return 0;
+}</pre>
 <h2>w7</h2>
 <p>Map: site map 網站所有頁面</p>
 <p>EditA: edit all pages, 使用時機為(1)解決多人共用網站時的衝突, 或(2)刪除特定頁面</p>
