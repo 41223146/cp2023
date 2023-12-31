@@ -3,8 +3,8 @@
 
 #define WIDTH 600
 #define HEIGHT 400
-#define RED 0xBF0A30    // Red color
-#define WHITE 0xFFFFFF  // White color
+#define DEEPER_RED 0x800000  // Deeper Red color
+#define WHITE 0xFFFFFF       // White color
 
 void drawLatviaFlag() {
     gdImagePtr im;
@@ -13,15 +13,15 @@ void drawLatviaFlag() {
     im = gdImageCreateTrueColor(WIDTH, HEIGHT);
     output = fopen("latvia_flag.png", "wb");
 
-    // Allocate red and white colors
-    int redIndex = gdImageColorAllocate(im, (RED >> 16) & 0xFF, (RED >> 8) & 0xFF, RED & 0xFF);
+    // Allocate deeper red and white colors
+    int deeperRedIndex = gdImageColorAllocate(im, (DEEPER_RED >> 16) & 0xFF, (DEEPER_RED >> 8) & 0xFF, DEEPER_RED & 0xFF);
     int whiteIndex = gdImageColorAllocate(im, (WHITE >> 16) & 0xFF, (WHITE >> 8) & 0xFF, WHITE & 0xFF);
 
-    // Draw red upper half
-    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT / 2 - 1, redIndex);
+    // Draw deeper red upper half
+    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT / 2 - 1, deeperRedIndex);
 
-    // Draw red lower half
-    gdImageFilledRectangle(im, 0, HEIGHT / 2, WIDTH - 1, HEIGHT - 1, redIndex);
+    // Draw deeper red lower half
+    gdImageFilledRectangle(im, 0, HEIGHT / 2, WIDTH - 1, HEIGHT - 1, deeperRedIndex);
 
     // Draw white horizontal stripe (centered vertically)
     int whiteHeight = HEIGHT / 5;  // adjust the height as needed
