@@ -1620,6 +1620,24 @@ printf("%d\n", 0 &amp;&amp; 0 );
 printf("%d\n", 2 &amp;&amp; 2 );
 }</pre>
 <p><img alt="" height="101" src="/images/c_ex.8.png" width="342"/></p>
+<h2>9.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+float circle( int r ); /* 宣告 circle 的 prototype */
+void main()
+{
+float answer;
+answer = circle(8);
+printf( " 圓周長度是 %f", answer );
+}
+/* ====================
+ circle 函數, 計算 circle 的圓周長
+==================== */
+float circle( int r )
+{
+float result;
+result = 3.14159 * (double)2 * r;
+return ( result );
+}</pre>
 <h1>Note</h1>
 <h2>ssh</h2>
 <p>下載putty</p>
