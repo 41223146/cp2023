@@ -143,6 +143,47 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">Belgium << <a href='Belgium.html'>Previous</a> <a href='w7.html'>Next</a> >> w7<br /><h1>Hungary</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+
+#define WIDTH 600
+#define HEIGHT 400
+#define RED 0xD21C1C   // Red color
+#define WHITE 0xFFFFFF // White color
+#define GREEN 0x318B41  // Corrected Green color
+
+void drawHungaryFlag() {
+    gdImagePtr im;
+    FILE *output;
+
+    im = gdImageCreateTrueColor(WIDTH, HEIGHT);
+    output = fopen("hungary_flag.png", "wb");
+
+    // Allocate red, white, and green colors
+    int redIndex = gdImageColorAllocate(im, (RED &gt;&gt; 16) &amp; 0xFF, (RED &gt;&gt; 8) &amp; 0xFF, RED &amp; 0xFF);
+    int whiteIndex = gdImageColorAllocate(im, (WHITE &gt;&gt; 16) &amp; 0xFF, (WHITE &gt;&gt; 8) &amp; 0xFF, WHITE &amp; 0xFF);
+    int greenIndex = gdImageColorAllocate(im, (GREEN &gt;&gt; 16) &amp; 0xFF, (GREEN &gt;&gt; 8) &amp; 0xFF, GREEN &amp; 0xFF);
+
+    // Draw red upper third
+    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT / 3 - 1, redIndex);
+
+    // Draw white middle third
+    gdImageFilledRectangle(im, 0, HEIGHT / 3, WIDTH - 1, 2 * HEIGHT / 3 - 1, whiteIndex);
+
+    // Draw green lower third
+    gdImageFilledRectangle(im, 0, 2 * HEIGHT / 3, WIDTH - 1, HEIGHT - 1, greenIndex);
+
+    // Save the image
+    gdImagePng(im, output);
+    fclose(output);
+    gdImageDestroy(im);
+}
+
+int main() {
+    drawHungaryFlag();
+    return 0;
+}
+</pre>
 <br />Belgium << <a href='Belgium.html'>Previous</a> <a href='w7.html'>Next</a> >> w7</div>
         
     <!-- footer -->
